@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nbk-Qz-3Sf">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -104,6 +104,9 @@
                                                 <rect key="frame" x="53.5" y="222" width="267" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Leave your feedback"/>
+                                                <connections>
+                                                    <segue destination="f4B-yB-j7h" kind="show" identifier="goToLeaveFeedback" id="rEr-qU-WD9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -186,7 +189,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="feedbackDate" destination="XOV-lQ-0xJ" id="xrK-qH-l7c"/>
+                                    <outlet property="feedbackDate" destination="mtJ-Lx-aN9" id="lsz-71-rOg"/>
                                     <outlet property="feedbackRating" destination="1ro-6l-rAN" id="xA3-OJ-0tK"/>
                                     <outlet property="feedbackText" destination="XOS-8d-J6U" id="qT7-Cb-Eis"/>
                                 </connections>
@@ -203,10 +206,10 @@
             </objects>
             <point key="canvasLocation" x="2350.7246376811595" y="-101.11607142857143"/>
         </scene>
-        <!--View Controller-->
+        <!--Leave Feedback View Controller-->
         <scene sceneID="BRD-FR-rO3">
             <objects>
-                <viewController id="f4B-yB-j7h" sceneMemberID="viewController">
+                <viewController id="f4B-yB-j7h" customClass="LeaveFeedbackViewController" customModule="MealsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VFK-9s-vtU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,51 +220,68 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ds3-wf-G16">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Feedback" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTH-Cn-O4i">
-                                                <rect key="frame" x="96" y="96" width="223" height="42"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Feedback" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTH-Cn-O4i">
+                                                <rect key="frame" x="96" y="116" width="223" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="8cw-cg-Gqk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="wTH-Cn-O4i" firstAttribute="centerX" secondItem="Ds3-wf-G16" secondAttribute="centerX" id="83k-2k-scq"/>
                                             <constraint firstAttribute="height" constant="2000" id="IcP-wb-Vmb"/>
+                                            <constraint firstItem="wTH-Cn-O4i" firstAttribute="top" secondItem="Ds3-wf-G16" secondAttribute="top" constant="116" id="YWp-l5-zKE"/>
+                                            <constraint firstItem="wTH-Cn-O4i" firstAttribute="leading" secondItem="Ds3-wf-G16" secondAttribute="leading" constant="96" id="ux5-Km-4jz"/>
                                         </constraints>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NSh-Iy-dLD">
-                                        <rect key="frame" x="19" y="210" width="378" height="190"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GqT-GG-AP1">
-                                        <rect key="frame" x="19" y="494" width="378" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <segments>
-                                            <segment title="❤️‍🔥"/>
-                                            <segment title="❤️‍🔥"/>
-                                            <segment title="❤️‍🔥"/>
-                                            <segment title="❤️‍🔥"/>
-                                            <segment title="❤️‍🔥"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwO-hI-g75">
-                                        <rect key="frame" x="104" y="581" width="211" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Save your feedback"/>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="X9z-Qg-6Pr">
+                                        <rect key="frame" x="18" y="200" width="378" height="413"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NSh-Iy-dLD">
+                                                <rect key="frame" x="0.0" y="0.0" width="378" height="181"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GqT-GG-AP1">
+                                                <rect key="frame" x="0.0" y="256" width="378" height="35"/>
+                                                <segments>
+                                                    <segment title="❤️‍🔥"/>
+                                                    <segment title="❤️‍🔥"/>
+                                                    <segment title="❤️‍🔥"/>
+                                                    <segment title="❤️‍🔥"/>
+                                                    <segment title="❤️‍🔥"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="segmentAction:" destination="f4B-yB-j7h" eventType="valueChanged" id="q8z-DQ-HfQ"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwO-hI-g75">
+                                                <rect key="frame" x="0.0" y="365" width="378" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="Save your feedback"/>
+                                                <connections>
+                                                    <action selector="saveFeedback:" destination="f4B-yB-j7h" eventType="touchUpInside" id="QUM-xz-Zxv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Ds3-wf-G16" secondAttribute="trailing" id="1N1-qB-SH1"/>
+                                    <constraint firstItem="X9z-Qg-6Pr" firstAttribute="centerX" secondItem="Ds3-wf-G16" secondAttribute="centerX" id="J1I-Uu-qJz"/>
+                                    <constraint firstItem="X9z-Qg-6Pr" firstAttribute="top" secondItem="3m2-tx-oJ8" secondAttribute="top" constant="263" id="PuC-zY-pAg"/>
                                     <constraint firstItem="Ds3-wf-G16" firstAttribute="top" secondItem="1ZT-dl-7IE" secondAttribute="top" id="d12-si-418"/>
                                     <constraint firstItem="Ds3-wf-G16" firstAttribute="centerX" secondItem="1ZT-dl-7IE" secondAttribute="centerX" id="ekO-ad-TEJ"/>
                                     <constraint firstAttribute="bottom" secondItem="Ds3-wf-G16" secondAttribute="bottom" id="fbZ-t0-Dl7"/>
+                                    <constraint firstItem="3m2-tx-oJ8" firstAttribute="bottom" secondItem="X9z-Qg-6Pr" secondAttribute="bottom" constant="220" id="g1L-BB-Qcr"/>
                                     <constraint firstItem="Ds3-wf-G16" firstAttribute="leading" secondItem="1ZT-dl-7IE" secondAttribute="leading" id="vub-F4-Okz"/>
+                                    <constraint firstItem="X9z-Qg-6Pr" firstAttribute="leading" secondItem="3m2-tx-oJ8" secondAttribute="leading" constant="18" id="xul-qS-flq"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="UoA-GY-qRe"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="3m2-tx-oJ8"/>
@@ -277,6 +297,13 @@
                             <constraint firstItem="1ZT-dl-7IE" firstAttribute="top" secondItem="VFK-9s-vtU" secondAttribute="top" id="h6y-6A-WCu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="yBQ-uk-dSs"/>
+                    <connections>
+                        <outlet property="button" destination="WwO-hI-g75" id="nu4-Jp-6ua"/>
+                        <outlet property="feedbackText" destination="NSh-Iy-dLD" id="ToK-ZX-53y"/>
+                        <outlet property="rating" destination="GqT-GG-AP1" id="F4X-3x-FR8"/>
+                        <outlet property="yourFeeback" destination="wTH-Cn-O4i" id="gWD-qr-mwe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2I-aA-262" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -28,13 +28,13 @@ class MealDetailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "goToCheckFeedback":
         guard segue.identifier == "goToCheckFeedback" else { return }
-        
-       /*: let feedback = meal
-        let mealDetailVC = segue.destination as! CheckFeedbackViewController
-        mealDetailVC.meal = feedback */
-        
-        
+        case "goToLeaveFeedback":
+        guard segue.identifier == "goToLeaveFeedback" else { return }
+        default: break
+        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -52,4 +52,6 @@ class MealDetailViewController: UIViewController {
         mealNotesLabel.text = meal.notes
         //mealDateLabel.text = meal.currentDate
     }
+    
 }
+

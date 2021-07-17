@@ -7,8 +7,10 @@
 
 import Foundation
 
+
 class DataManger {
     // MARK: Lifecycle
+    
 
     private init() {}
 
