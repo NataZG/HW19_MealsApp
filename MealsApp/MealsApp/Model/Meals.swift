@@ -14,17 +14,17 @@ struct Meal {
     let notes: String
     
     var rating: Int {
-        var retingSum = 0
+        var ratingSum = 0
         feedbacks.forEach { feedback in
-            retingSum += feedback.rating
+            ratingSum += feedback.rating
         }
-        return retingSum / feedbacks.count
+        return ratingSum / feedbacks.count
     }
     
     var feedbacks: [Feedback]
 
     var ratingBar: String {
-        String(repeating: "⭐️", count: rating) // control + command + " "
+        String(repeating: "❤️‍🔥", count: rating) // control + command + " "
     }
 }
 
@@ -32,6 +32,10 @@ struct Feedback {
     let feedback: String
     let date: Date = Date()
     let rating: Int
+    
+    var ratingBar: String {
+        String(repeating: "❤️‍🔥", count: rating) // control + command + " "
+    }
     
     var currentDate: String {
         let dateFormatter = DateFormatter()
