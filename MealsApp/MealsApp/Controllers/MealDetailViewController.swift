@@ -18,10 +18,23 @@ class MealDetailViewController: UIViewController {
     //@IBOutlet var mealDateLabel: UILabel!
     
     var meal: Meal!
+    var meals: [Meal] = []
+    var feedback: Feedback!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI(with: view.bounds.size)
+        meals = DataManger.shared.meals
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "goToCheckFeedback" else { return }
+        
+       /*: let feedback = meal
+        let mealDetailVC = segue.destination as! CheckFeedbackViewController
+        mealDetailVC.meal = feedback */
+        
+        
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

@@ -16,8 +16,10 @@ class CellManager {
 }
 
 class FeedbackManager {
-    func configure(_ cell: UITableViewCell, with feedback: Feedback) {
-        cell.detailTextLabel?.text = feedback.feedback
-        cell.textLabel?.text = feedback.ratingBar
+func configureText(for cell: UITableViewCell, with item: Meal) {
+    if let feedbackText = cell as? FeedbackViewCell {
+        feedbackText.feedbackText.text = item.feedbacks as? String
+        feedbackText.feedbackRating.text = item.ratingBar
     }
+}
 }

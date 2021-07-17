@@ -133,16 +133,16 @@
             </objects>
             <point key="canvasLocation" x="1563.768115942029" y="95.758928571428569"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Check Feedback View Controller-->
         <scene sceneID="JsP-Hf-JJc">
             <objects>
-                <tableViewController id="t44-1g-B4d" sceneMemberID="viewController">
+                <tableViewController id="t44-1g-B4d" customClass="CheckFeedbackViewController" customModule="MealsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e9e-46-uRo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedbackCell" id="lci-7V-AjE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedbackCell" id="lci-7V-AjE" customClass="FeedbackViewCell" customModule="MealsApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="111.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lci-7V-AjE" id="977-UD-zvg">
@@ -185,10 +185,15 @@
                                         <constraint firstAttribute="bottom" secondItem="1ro-6l-rAN" secondAttribute="bottom" constant="8.5" id="gLR-0F-Bk2"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="feedbackDate" destination="XOV-lQ-0xJ" id="xrK-qH-l7c"/>
+                                    <outlet property="feedbackRating" destination="1ro-6l-rAN" id="xA3-OJ-0tK"/>
+                                    <outlet property="feedbackText" destination="XOS-8d-J6U" id="qT7-Cb-Eis"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="t44-1g-B4d" id="iN7-Mb-ymb"/>
+                            <outlet property="dataSource" destination="t44-1g-B4d" id="gxF-Dc-MnA"/>
                             <outlet property="delegate" destination="t44-1g-B4d" id="3R8-lT-aQj"/>
                         </connections>
                     </tableView>
