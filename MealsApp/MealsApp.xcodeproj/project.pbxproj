@@ -15,6 +15,11 @@
 		411D827226A0B063005BC64C /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D827126A0B063005BC64C /* Meals.swift */; };
 		411D827426A0B0F3005BC64C /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D827326A0B0F3005BC64C /* MealViewController.swift */; };
 		411D827626A0B10B005BC64C /* MealDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D827526A0B10B005BC64C /* MealDetailViewController.swift */; };
+		411D827826A0BA7E005BC64C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D827726A0BA7E005BC64C /* DataManager.swift */; };
+		411D827A26A2C849005BC64C /* CellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D827926A2C849005BC64C /* CellManager.swift */; };
+		411D828026A2D4CE005BC64C /* CheckFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D827F26A2D4CE005BC64C /* CheckFeedbackViewController.swift */; };
+		411D828826A2ECB1005BC64C /* FeedbackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D828726A2ECB1005BC64C /* FeedbackViewCell.swift */; };
+		416C3DAB26A3006C0082D583 /* LeaveFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416C3DAA26A3006C0082D583 /* LeaveFeedbackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		411D827126A0B063005BC64C /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		411D827326A0B0F3005BC64C /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		411D827526A0B10B005BC64C /* MealDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewController.swift; sourceTree = "<group>"; };
+		411D827726A0BA7E005BC64C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		411D827926A2C849005BC64C /* CellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellManager.swift; sourceTree = "<group>"; };
+		411D827F26A2D4CE005BC64C /* CheckFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckFeedbackViewController.swift; sourceTree = "<group>"; };
+		411D828726A2ECB1005BC64C /* FeedbackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewCell.swift; sourceTree = "<group>"; };
+		416C3DAA26A3006C0082D583 /* LeaveFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveFeedbackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,9 @@
 			children = (
 				411D827326A0B0F3005BC64C /* MealViewController.swift */,
 				411D827526A0B10B005BC64C /* MealDetailViewController.swift */,
+				411D827F26A2D4CE005BC64C /* CheckFeedbackViewController.swift */,
+				411D828726A2ECB1005BC64C /* FeedbackViewCell.swift */,
+				416C3DAA26A3006C0082D583 /* LeaveFeedbackViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -110,6 +123,8 @@
 		411D826F26A0AF8F005BC64C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				411D827726A0BA7E005BC64C /* DataManager.swift */,
+				411D827926A2C849005BC64C /* CellManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -192,8 +207,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				411D827226A0B063005BC64C /* Meals.swift in Sources */,
+				411D827826A0BA7E005BC64C /* DataManager.swift in Sources */,
+				411D828026A2D4CE005BC64C /* CheckFeedbackViewController.swift in Sources */,
 				411D827426A0B0F3005BC64C /* MealViewController.swift in Sources */,
 				411D825826A0AF51005BC64C /* AppDelegate.swift in Sources */,
+				416C3DAB26A3006C0082D583 /* LeaveFeedbackViewController.swift in Sources */,
+				411D828826A2ECB1005BC64C /* FeedbackViewCell.swift in Sources */,
+				411D827A26A2C849005BC64C /* CellManager.swift in Sources */,
 				411D827626A0B10B005BC64C /* MealDetailViewController.swift in Sources */,
 				411D825A26A0AF51005BC64C /* SceneDelegate.swift in Sources */,
 			);
