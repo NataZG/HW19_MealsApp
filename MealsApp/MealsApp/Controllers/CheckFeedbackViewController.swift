@@ -17,7 +17,7 @@ class CheckFeedbackViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       // tableView.dataSource = self
+        // tableView.dataSource = self
         meals = DataManger.shared.meals
     }
 }
@@ -25,17 +25,17 @@ class CheckFeedbackViewController: UIViewController {
 // MARK: UITableViewDataSource
 
 extension CheckFeedbackViewController: UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         meals.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedbackCell", for: indexPath)
-        
+
         let feedback = meals[indexPath.row]
         cellController.configureText(for: cell, with: feedback)
-        
+
         return cell
     }
 }
